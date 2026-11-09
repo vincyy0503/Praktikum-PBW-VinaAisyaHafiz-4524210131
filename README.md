@@ -414,7 +414,7 @@ Tabel daftar penulis menampilkan kolom Books yang menghitung total buku dari set
 Aplikasi menampilkan dropdown menu profil di sudut kanan atas untuk pengguna aktif ("Vina"). Menu ini mencakup tombol Sign out untuk keluar dari sesi, serta toggle bawaan Filament untuk mengubah tampilan tema panel (Light Mode, Dark Mode, atau mengikuti preferensi sistem).
 <img width="316" height="227" alt="image" src="https://github.com/user-attachments/assets/e4d0efae-6013-4328-8589-50b81579aa10" />
 
-# BAGIAN 1 – Dokumentasi Tampilan Aplikasi
+# BAGIAN 2 – Dokumentasi Tampilan Aplikasi
 
 ## 1. Halaman Dashboard (Admin)
 
@@ -434,12 +434,10 @@ Terdapat empat widget statistik yang dibuat pada Tugas 2 poin 3, yaitu:
 
 Tampilan tabel manajemen data penulis (*Authors*) khusus Admin. Menampilkan daftar *Author* dengan kolom **ID**, **Name**, dan jumlah **Books**. Sebagai Admin, tombol aksi di sebelah kanan mencakup tombol **Edit** dan **Delete** untuk pengelolaan penuh terhadap data *Author*.
 
-> <img width="1886" height="877" alt="Screenshot 2026-11-09 163630" src="https://github.com/user-attachments/assets/b0fc3fa5-91e3-4a94-a69a-a0ba33dd8069" />
+><img width="1891" height="888" alt="Screenshot 2026-11-09 165648" src="https://github.com/user-attachments/assets/d21538bf-fe44-428c-91fb-42d3b6fe59bd" />
 
 
 ## 3. Detail & Edit Author (Admin)
-><img width="1891" height="888" alt="Screenshot 2026-11-09 165648" src="https://github.com/user-attachments/assets/2f91ee53-f78b-4c10-8a20-4fd01327364a" />
-
 
 **View Author:** Menampilkan informasi detail nama *Author* secara *read-only* dalam bentuk *modal popup*.
 
@@ -476,61 +474,70 @@ Memanfaatkan komponen *Infolist* Filament untuk menampilkan detail data secara t
 
 Menampilkan ucapan selamat datang untuk **Staff User**. Informasi statistik (Total Books, Total Authors, Books Available, Books Borrowed) serta grafik *Book Status Distribution* ditampilkan serupa dengan tampilan Admin untuk pemantauan data.
 
-> *[Screenshot: Dashboard Staff]*
+> <img width="1887" height="907" alt="Screenshot 2026-11-09 170633" src="https://github.com/user-attachments/assets/a4477b27-1d71-4cf0-8934-38ebe1d27002" />
+
 
 ## 8. Daftar Authors (Staff)
 
 Berdasarkan aturan *Policy* hak akses, Staff diizinkan menambah data (*New author*) dan mengubah data. Opsi aksi pada tabel hanya menampilkan tombol **View** dan **Edit**, tanpa adanya tombol *Delete* langsung di tabel utama.
 
-> *[Screenshot: Tabel Authors (Staff) dan modal View author]*
+> <img width="1882" height="888" alt="Screenshot 2026-11-09 170733" src="https://github.com/user-attachments/assets/8f1bf14e-48b6-4137-80fb-e70d42663e7f" />
+
 
 ## 9. Edit Author (Staff)
 
 Menampilkan form *Edit Author* di mana Staff dapat mengubah nama *Author* dan menyimpannya. Berbeda dengan tampilan Admin, halaman *Edit Author* milik Staff tidak dilengkapi dengan tombol *Delete*.
 
-> *[Screenshot: Edit Author (Staff)]*
+> <img width="1886" height="542" alt="Screenshot 2026-11-09 170948" src="https://github.com/user-attachments/assets/07a36955-9105-441d-b17a-f32f67279708" />
+
 
 ## 10. Daftar Books (Staff)
 
 Staff memiliki tombol **New book** untuk menambahkan data buku baru. Aksi untuk setiap baris buku dibatasi hanya pada **View** dan **Edit** (akses *Delete* dibatasi hanya untuk Admin sesuai *BookPolicy*).
 
-> *[Screenshot: Tabel Books (Staff)]*
+> <img width="1896" height="877" alt="Screenshot 2026-11-09 171024" src="https://github.com/user-attachments/assets/b3c28c4d-7b9c-40d3-9cb2-9337f058ee7f" />
+
 
 ## 11. View & Edit Book (Staff)
 
 **View Book (Staff):** Menampilkan rincian informasi buku lengkap beserta sampulnya tanpa tombol tindakan hapus data (*Delete*).
+> <img width="1881" height="891" alt="Screenshot 2026-11-09 171110" src="https://github.com/user-attachments/assets/d40f2904-d9e9-4430-87d7-64021fdf2e6c" />
 
 **Edit Book (Staff):** Memungkinkan Staff memperbarui informasi rincian buku dan mengunggah berkas sampul.
+> <img width="1895" height="890" alt="Screenshot 2026-11-09 171150" src="https://github.com/user-attachments/assets/6b135af9-f2d3-4892-81f9-8d3d02886967" />
 
-> *[Screenshot: View Book dan Edit Book (Staff)]*
 
 ## 12. Dashboard (Viewer)
 
 Terautentikasi sebagai **Viewer User**. Viewer dapat melihat visualisasi statistik keseluruhan perpustakaan dan grafik status buku, namun seluruh fiturnya bersifat *read-only*.
 
-> *[Screenshot: Dashboard Viewer]*
+> 
 
 ## 13. Daftar Authors (Viewer)
 
 Pada tabel *Authors*, tidak terdapat tombol *New author*. Opsi tindakan di kolom kanan hanya menyediakan tombol **View**. Ketika diklik, informasi nama *Author* muncul dalam modal *View author* tanpa opsi pengubahan data.
 
-> *[Screenshot: Tabel Authors (Viewer) dan modal View author]*
+> 
 
 ## 14. Daftar Books (Viewer)
 
 Tampilan daftar buku tidak dilengkapi dengan tombol pembuatan buku baru (*New book*). Kolom aksi di sisi kanan hanya menyediakan tombol **View**.
 
-> *[Screenshot: Tabel Books (Viewer)]*
+> 
 
 ## 15. View Book Detail (Viewer)
 
 Menampilkan seluruh atribut detail buku (Cover, Title, ISBN, Author, Publisher, Year, Status, Categories, dan Description) menggunakan komponen *Infolist* secara murni *read-only*, tanpa tersedianya tombol *Edit* maupun *Delete*.
 
-> *[Screenshot: View Book (Viewer)]*
+> <img width="1887" height="907" alt="Screenshot 2026-11-09 170633" src="https://github.com/user-attachments/assets/8a4a2c57-28bd-4d20-95d2-b44342a4981f" />
+<img width="1887" height="907" alt="Screenshot 2026-11-09 170633" src="https://github.com/user-attachments/assets/80db7d7b-bf86-4632-a0e1-396c42039c08" />
+<img width="1890" height="898" alt="Screenshot 2026-11-09 170501" src="https://github.com/user-attachments/assets/6699458f-a6c4-4f82-a10b-370e7966c124" />
+<img width="1890" height="898" alt="Screenshot 2026-11-09 170501" src="https://github.com/user-attachments/assets/a8ebc878-ba0a-4b3c-8a46-1868ae91c90c" />
+
 
 ---
 
-# BAGIAN 2 – Penjelasan Arsitektur
+# BAGIAN 3 – Penjelasan Arsitektur
 
 ## 1. Penjelasan Arsitektur
 
