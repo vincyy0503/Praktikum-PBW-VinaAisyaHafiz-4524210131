@@ -1,6 +1,6 @@
 <div align="center">
 
-# **LAPORAN PRAKTIKUM PERTEMUAN 6**  
+# **LAPORAN PRAKTIKUM PERTEMUAN 6-8**  
 ## **PEMROGRAMAN BERBASIS WEB (A)**
 
 <img width="300" height="291" alt="image" src="https://github.com/user-attachments/assets/c8ff510d-7d09-48c7-bca9-d70fab465d65" />
