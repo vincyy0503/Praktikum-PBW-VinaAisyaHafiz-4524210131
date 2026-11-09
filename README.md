@@ -511,30 +511,28 @@ Staff memiliki tombol **New book** untuk menambahkan data buku baru. Aksi untuk 
 
 Terautentikasi sebagai **Viewer User**. Viewer dapat melihat visualisasi statistik keseluruhan perpustakaan dan grafik status buku, namun seluruh fiturnya bersifat *read-only*.
 
-> 
+> <img width="1896" height="897" alt="Screenshot 2026-11-09 171350" src="https://github.com/user-attachments/assets/c80f84c3-7549-4385-abea-121b2e00a825" />
+
 
 ## 13. Daftar Authors (Viewer)
 
 Pada tabel *Authors*, tidak terdapat tombol *New author*. Opsi tindakan di kolom kanan hanya menyediakan tombol **View**. Ketika diklik, informasi nama *Author* muncul dalam modal *View author* tanpa opsi pengubahan data.
 
-> 
+> <img width="1891" height="883" alt="Screenshot 2026-11-09 171419" src="https://github.com/user-attachments/assets/c70a9615-4ecf-47d0-8e19-a807552f5569" />
+> <img width="1123" height="410" alt="image" src="https://github.com/user-attachments/assets/9b0db6a7-7d5e-4c50-b69e-3fafcdfb4985" />
+ 
 
 ## 14. Daftar Books (Viewer)
 
 Tampilan daftar buku tidak dilengkapi dengan tombol pembuatan buku baru (*New book*). Kolom aksi di sisi kanan hanya menyediakan tombol **View**.
 
-> 
+>  <img width="1887" height="875" alt="image" src="https://github.com/user-attachments/assets/ba7ed051-494c-4983-bda0-7962d739e2be" />
 
 ## 15. View Book Detail (Viewer)
 
 Menampilkan seluruh atribut detail buku (Cover, Title, ISBN, Author, Publisher, Year, Status, Categories, dan Description) menggunakan komponen *Infolist* secara murni *read-only*, tanpa tersedianya tombol *Edit* maupun *Delete*.
-
-> <img width="1887" height="907" alt="Screenshot 2026-11-09 170633" src="https://github.com/user-attachments/assets/8a4a2c57-28bd-4d20-95d2-b44342a4981f" />
-<img width="1887" height="907" alt="Screenshot 2026-11-09 170633" src="https://github.com/user-attachments/assets/80db7d7b-bf86-4632-a0e1-396c42039c08" />
-<img width="1890" height="898" alt="Screenshot 2026-11-09 170501" src="https://github.com/user-attachments/assets/6699458f-a6c4-4f82-a10b-370e7966c124" />
-<img width="1890" height="898" alt="Screenshot 2026-11-09 170501" src="https://github.com/user-attachments/assets/a8ebc878-ba0a-4b3c-8a46-1868ae91c90c" />
-
-
+> <img width="1886" height="843" alt="image" src="https://github.com/user-attachments/assets/5a7502ad-17f7-437e-a4eb-29d8a1c5b496" />
+ 
 ---
 
 # BAGIAN 3 – Penjelasan Arsitektur
@@ -545,13 +543,13 @@ Menampilkan seluruh atribut detail buku (Cover, Title, ISBN, Author, Publisher, 
 
 Basis data aplikasi terdiri dari lima tabel: **authors**, **books**, **categories**, **users**, dan tabel penghubung **book_category**. Satu penulis dapat menulis banyak buku (1:N), satu buku dapat memiliki banyak kategori dan sebaliknya (M:N), sedangkan setiap pengguna memiliki satu dari tiga role, yaitu Admin, Staff, atau Viewer.
 
-> *[Screenshot: ERD Chen – "Author 1:N Book, Book M:N Category, User punya 3 role"]*
+> <img width="3155" height="4125" alt="erd_chen_authbook_HD" src="https://github.com/user-attachments/assets/ad4ca9a5-47f9-4381-8f81-927f4251fc92" />
 
 Keterangan notasi: persegi = entitas (tabel), oval = atribut (garis bawah = *primary key*), belah ketupat = relasi (atribut relasi yang bergaris bawah adalah *foreign key*). Garis ganda (||) berarti satu, dan kaki gagak berarti banyak. Kolom `author_id` pada Book adalah *foreign key* dari relasi *menulis*. Relasi *memiliki* diwujudkan oleh tabel pivot `book_category`. Semua akun berada pada satu entitas User. Panah dari User menunjukkan tiga role yang dibedakan oleh kolom `role`, yaitu Admin User, Staff User, dan Viewer User.
 
 ### 1.2 Penjelasan Relasi Antar Tabel
 
-> *[Screenshot: ERD Tabel Aplikasi Manajemen Buku (authbook)]*
+> <img width="4562" height="2716" alt="erd_tabel_authbook_warna_HD" src="https://github.com/user-attachments/assets/962a30fb-a945-4654-a427-98c78bdac5e0" />
 
 **Relasi 1: authors (1) berelasi dengan books (N)**
 
@@ -570,62 +568,8 @@ Role disimpan sebagai kolom enum `role` pada tabel `users`, bukan sebagai tabel 
 ## 2. Kamus Data
 
 Kamus data berikut merangkum seluruh tabel beserta nama field, tipe data, panjang, key (PK = primary key, FK = foreign key, UQ = unique), dan ketentuan nilai kosong (Null).
+> <img width="5624" height="4700" alt="kamus_data_ulang" src="https://github.com/user-attachments/assets/d55c78da-e03a-4b3f-8383-241c00902c70" />
 
-### Tabel authors
-
-| No | Nama Field | Tipe Data | Panjang | Key | Null |
-|----|------------|-----------|---------|-----|------|
-| 1 | id | BIGINT UNSIGNED | 20 | PK | Tidak |
-| 2 | name | VARCHAR | 255 | | Tidak |
-| 3 | created_at | TIMESTAMP | | | Ya |
-| 4 | updated_at | TIMESTAMP | | | Ya |
-
-### Tabel categories
-
-| No | Nama Field | Tipe Data | Panjang | Key | Null |
-|----|------------|-----------|---------|-----|------|
-| 1 | id | BIGINT UNSIGNED | 20 | PK | Tidak |
-| 2 | name | VARCHAR | 255 | | Tidak |
-| 3 | created_at | TIMESTAMP | | | Ya |
-| 4 | updated_at | TIMESTAMP | | | Ya |
-
-### Tabel book_category
-
-| No | Nama Field | Tipe Data | Panjang | Key | Null |
-|----|------------|-----------|---------|-----|------|
-| 1 | id | BIGINT UNSIGNED | 20 | PK | Tidak |
-| 2 | book_id | BIGINT UNSIGNED | 20 | FK | Tidak |
-| 3 | category_id | BIGINT UNSIGNED | 20 | FK | Tidak |
-
-### Tabel books
-
-| No | Nama Field | Tipe Data | Panjang | Key | Null |
-|----|------------|-----------|---------|-----|------|
-| 1 | id | BIGINT UNSIGNED | 20 | PK | Tidak |
-| 2 | isbn | VARCHAR | 255 | UQ | Tidak |
-| 3 | title | VARCHAR | 255 | | Tidak |
-| 4 | author_id | BIGINT UNSIGNED | 20 | FK | Tidak |
-| 5 | publisher | VARCHAR | 255 | | Ya |
-| 6 | year | YEAR | 4 | | Ya |
-| 7 | cover | VARCHAR | 255 | | Ya |
-| 8 | description | TEXT | | | Ya |
-| 9 | status | ENUM | | | Tidak |
-| 10 | created_at | TIMESTAMP | | | Ya |
-| 11 | updated_at | TIMESTAMP | | | Ya |
-
-### Tabel users
-
-| No | Nama Field | Tipe Data | Panjang | Key | Null |
-|----|------------|-----------|---------|-----|------|
-| 1 | id | BIGINT UNSIGNED | 20 | PK | Tidak |
-| 2 | name | VARCHAR | 255 | | Tidak |
-| 3 | email | VARCHAR | 255 | UQ | Tidak |
-| 4 | email_verified_at | TIMESTAMP | | | Ya |
-| 5 | password | VARCHAR | 255 | | Tidak |
-| 6 | role | ENUM | | | Tidak |
-| 7 | remember_token | VARCHAR | 100 | | Ya |
-| 8 | created_at | TIMESTAMP | | | Ya |
-| 9 | updated_at | TIMESTAMP | | | Ya |
 
 ---
 
@@ -642,7 +586,7 @@ Kamus data berikut merangkum seluruh tabel beserta nama field, tipe data, panjan
 7. **Rendering:** Hasil dirender oleh Blade dan Livewire menjadi HTML dengan Tailwind CSS dan dikirim kembali sebagai response. Halaman dashboard dirender dengan cara yang sama, termasuk widget statistik dan grafik *Book Status Distribution*.
 8. **Interaksi lanjutan:** Pencarian, filter, dan submit form dikirim sebagai pembaruan Livewire (AJAX) tanpa memuat ulang halaman penuh. Pada penyimpanan data, urutannya adalah validasi form, pengecekan policy, simpan ke database melalui model dengan `$fillable`, tampil notifikasi, lalu redirect ke daftar. File cover diunggah ke folder `book-covers` pada storage dan diakses melalui *symbolic link* `public/storage`.
 
-> *[Screenshot: Diagram alur aplikasi (Browser → Router Laravel → Sudah login? → Policy mengizinkan? → Livewire Page → Resource Filament → Data valid? → Eloquent Model → Database → Livewire render → Response ke Browser)]*
+> <img width="2280" height="3030" alt="flow-aplikasi" src="https://github.com/user-attachments/assets/4761025c-7f9c-4879-99a6-802af229f723" />
 
 ---
 
