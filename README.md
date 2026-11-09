@@ -607,11 +607,11 @@ Pada pendekatan tradisional, CRUD dibuat manual: route, controller, form request
 | Pemahaman alur dasar | Banyak proses tersembunyi di balik komponen. | Setiap langkah terlihat jelas, baik untuk belajar. |
 | Ketergantungan | Terikat versi Filament dan Livewire. | Minim, hanya Laravel. |
 
-**Kelebihan dan kekurangan.** Filament unggul dalam kecepatan, konsistensi tampilan, dan banyaknya fitur siap pakai, tetapi fleksibilitas tampilan terbatas dan proses di balik komponen kurang terlihat. Pendekatan manual memberi kendali penuh dan membuat setiap langkah dapat dipahami, tetapi membutuhkan waktu dan kode yang jauh lebih banyak.
+**Kelebihan dan kekurangan:** Filament unggul dalam kecepatan, konsistensi tampilan, dan banyaknya fitur siap pakai, tetapi fleksibilitas tampilan terbatas dan proses di balik komponen kurang terlihat. Pendekatan manual memberi kendali penuh dan membuat setiap langkah dapat dipahami, tetapi membutuhkan waktu dan kode yang jauh lebih banyak.
 
-**Kapan memakai Filament.** Filament sesuai untuk panel admin, *back office*, dashboard internal, aplikasi yang banyak berisi CRUD, serta prototipe, seperti aplikasi manajemen buku ini.
+**Kapan memakai Filament:** Filament sesuai untuk panel admin, *back office*, dashboard internal, aplikasi yang banyak berisi CRUD, serta prototipe, seperti aplikasi manajemen buku ini.
 
-**Kapan tidak.** Hindari untuk situs yang menghadap publik, tampilan yang sangat khusus, atau aplikasi mobile yang lebih tepat memakai API dan *framework* mobile.
+**Kapan tidak:** Hindari untuk situs yang menghadap publik, tampilan yang sangat khusus, atau aplikasi mobile yang lebih tepat memakai API dan *framework* mobile.
 
 ---
 
